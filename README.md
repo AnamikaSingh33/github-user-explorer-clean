@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+cat > README.md <<'README'
+# GitHub User Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive web application that allows users to search for GitHub users and explore their public repositories with advanced filtering and sorting capabilities.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Live Demo  
+ https://github-user-explorer-clean.vercel.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  GitHub Repository  
+https://github.com/AnamikaSingh33/github-user-explorer-clean
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+ **User Search** – Search for GitHub users by username with input debouncing  
+**User Details** – View avatar, name, bio, followers, and public repo count  
+ **Repository List** – Displays repositories with stars, forks, language, and updated date  
+ **Filters & Sorting** – Filter by language or stars and sort by stars/forks/date/name  
+**Pagination / Infinite Scroll** – Smooth loading experience for large lists  
+**Error Handling** – Graceful handling of API rate limits and invalid users  
+ **Responsive Design** – Mobile-first layout using Tailwind CSS  
+ **TypeScript Strict Mode** – Strongly typed with zero `any` types  
+ **CI/CD** – Auto-deploy to Vercel via GitHub Actions  
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| Category | Tools |
+|-----------|-------|
+| **Frontend** | React 18, TypeScript, Vite |
+| **Styling** | Tailwind CSS |
+| **State Management** | React Query (TanStack Query) |
+| **API** | GitHub REST API v3 |
+| **Build & Deploy** | Vite + Vercel + GitHub Actions |
+| **Code Quality** | ESLint (strict), Prettier, Husky hooks |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+##  Setup Instructions
+
+Clone the repository and run locally:
+
+```bash
+git clone https://github.com/AnamikaSingh33/github-user-explorer-clean
+cd github-user-explorer-clean
+npm install
+npm run dev
+Build for production:
+npm run build
+npm run preview
+
